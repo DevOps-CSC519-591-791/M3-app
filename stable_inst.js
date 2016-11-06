@@ -46,10 +46,10 @@ function handleRequest(req, res){
 }
 
 var server = http.createServer(handleRequest);
-
+var PORT = process.env.PORT || 3000;
 //Lets start our server
 server.listen(PORT, function(){
-    console.log("Server listening on: http://localhost:%s", process.env.PORT || 3000);
+    console.log("Server listening on: http://localhost:%s", PORT);
 });
 
 exports.server = server;
