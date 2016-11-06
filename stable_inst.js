@@ -1,5 +1,5 @@
 var http = require('http');
-var redis = require('redis')
+// var redis = require('redis')
 var multer  = require('multer')
 var express = require('express')
 var fs      = require('fs')
@@ -7,8 +7,8 @@ var app = express()
 const exec = require('child_process').exec;
 
 // REDIS
-var client = redis.createClient(6379, '127.0.0.1', {})
-var myurl;
+// var client = redis.createClient(6379, '127.0.0.1', {})
+// var myurl;
 
 function print_hello(req, res){
 	client.get("flag", function(err,flag){
