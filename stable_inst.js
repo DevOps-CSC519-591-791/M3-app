@@ -38,9 +38,9 @@ function print_hello(req, res){
 	
 }
 
-var args = process.argv.slice(2);
-const PORT=args[0]; 
-
+// var args = process.argv.slice(2);
+// const PORT=args[0]; 
+// app.set('port', process.env.PORT || 3000);
 function handleRequest(req, res){
 	print_hello(req, res);
 }
@@ -49,7 +49,7 @@ var server = http.createServer(handleRequest);
 
 //Lets start our server
 server.listen(PORT, function(){
-    console.log("Server listening on: http://localhost:%s", PORT);
+    console.log("Server listening on: http://localhost:%s", process.env.PORT || 3000);
 });
 
 exports.server = server;
