@@ -16,15 +16,15 @@ function print_hello(req, res){
 	    res.write('<body>');
 	    res.write('Hello! This is the web page for milestone 3 demo.</br></br>');
 	    res.write('<b>This instance shows the stable version.</b></br>');
-	    if (flag.charAt(0) == '1'){
-	    	res.write('Feature 1 Enabled.</br>');
-	    }
-	    if (flag.charAt(1) == '1'){
-	    	res.write('Feature 2 Enabled.</br>');
-	    }
-	    if (flag.charAt(2) == '1'){
-	    	res.write('Feature 3 Enabled.</br>');
-	    }
+	    // if (flag.charAt(0) == '1'){
+	    // 	res.write('Feature 1 Enabled.</br>');
+	    // }
+	    // if (flag.charAt(1) == '1'){
+	    // 	res.write('Feature 2 Enabled.</br>');
+	    // }
+	    // if (flag.charAt(2) == '1'){
+	    // 	res.write('Feature 3 Enabled.</br>');
+	    // }
 	    // if (flag.charAt(3) == '1'){
 	    // 	res.write('<b>Feature 4 Enabled.</br>');
 	    // }
