@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha ./test/test.js",
     "start": "node stable_inst.js",
-    "prestart": "sudo npm install"
+    "prestart": "npm install"
   },
   "author": "",
   "license": "ISC",
