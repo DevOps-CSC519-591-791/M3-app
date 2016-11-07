@@ -4,3 +4,4 @@ cat out|wc -l   [will be 0 or larger that 0!!]
 rm out
 forever stopall
 
+
