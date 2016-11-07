@@ -5,18 +5,18 @@
   "main": "stable_inst.js",
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha ./test/test.js",
-    "start": "ls && npm install && node stable_inst.js"
+    "start": "node stable_inst.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "*",
-    "multer": "*",
-    "redis": "*",
-    "http-proxy":"*",
-    "node-cmd": "*",
-    "request": "*",
-    "mocha": "*",
-    "istanbul": "*"
+    "express": "latest",
+    "multer": "latest",
+    "redis": "latest",
+    "http-proxy":"latest",
+    "node-cmd": "latest",
+    "request": "latest",
+    "mocha": "latest",
+    "istanbul": "latest"
   }
 }
