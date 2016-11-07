@@ -14,7 +14,7 @@ function print_hello(req, res){
 	client.get("flag", function(err,flag){
 		res.write('<html>');
 	    res.write('<body>');
-	    res.write('Hello world three server is up! This is the web page for milestone 3 demo.</br></br>');
+	    res.write('Hello world three server is uppppp! This is the web page for milestone 3 demo.</br></br>');
 	    res.write('<b>This instance shows the stable version.</b></br>');
 	    if (flag.charAt(0) == '1'){
 	    	res.write('Feature 1 Enabled.</br>');
