@@ -5,7 +5,7 @@
   "main": "stable_inst.js",
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha ./test/test.js",
-    "start": "node stable_inst.js"
+    "start": "npm install && node stable_inst.js"
   },
   "author": "",
   "license": "ISC",
