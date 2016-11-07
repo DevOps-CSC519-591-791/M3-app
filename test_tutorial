@@ -1,6 +1,6 @@
 forever start stable_inst.js 3000
 npm test|grep -Eo "failed">out
-cat out|wc -l   [will be 0 or larger that 0!!]
+cat out|wc -l   [will be 0 or larger that 0!!!]
 rm out
 forever stopall
 
