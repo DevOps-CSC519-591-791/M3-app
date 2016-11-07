@@ -7,7 +7,7 @@ var app = express()
 const exec = require('child_process').exec;
 
 // REDIS
-var client = redis.createClient(6379, '127.0.0.1', {})
+var client = redis.createClient(6379, '54.234.163.154', {})
 var myurl;
 
 function print_hello(req, res){
@@ -38,15 +38,12 @@ function print_hello(req, res){
     
 }
 
-var args = process.argv.slice(2);
-const PORT=args[0]; 
-
 function handleRequest(req, res){
     print_hello(req, res);
 }
 
 var server = http.createServer(handleRequest);
-
+var PORT = process.env.PORT || 3000;
 //Lets start our server
 server.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
