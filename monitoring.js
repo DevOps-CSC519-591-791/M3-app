@@ -25,10 +25,11 @@ monitor.start();
 var exec = require('child_process').exec;
 var cmd = 'curl http://169.254.169.254/latest/meta-data/public-ipv4';
 
+var publicIP = ''
 exec(cmd, function(error, stdout, stderr) {
   // command output is in stdout
   console.log(stdout)
-  console.log(stderr)
+  publicIP = stdout
 });
 
 
