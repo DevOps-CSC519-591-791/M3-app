@@ -17,11 +17,14 @@ monitor.on('monitor', function(event) {
   // console.log(event);
   // console.log(event.type)
   // console.log(event.freemem)
+  // console.log(event.totalmem)
   // console.log(event.loadavg[0])
-  console.log('Memory Percentage: ' + event.freemem / event.totalmen)
+  console.log('Memory Percentage: ' + parseFloat(event.freemem) / parseFloat(event.totalmem))
   console.log('CPU Percentage: ' + event.loadavg[0])
   console.log('-------------')
 });
+
+
 
 
 
