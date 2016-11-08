@@ -21,33 +21,15 @@ monitor.start();
 // });
 
 
-var url = "http://169.254.169.254/latest/meta-data/public-ipv4";
 
-var options = {
-  host: "http://169.254.169.254/latest/meta-data/public-ipv4",
-  port: 80,
-  path: '/',
-  method: 'GET'
-};
+var curl = require('curlrequest');
 
-var req = http.request(options, function(res) {
-  console.log('STATUS: ' + res.statusCode);
-  console.log('HEADERS: ' + JSON.stringify(res.headers));
-  res.setEncoding('utf8');
-  res.on('data', function (chunk) {
-    console.log('BODY: ' + chunk);
-  });
+curl.request({ url: 'http://169.254.169.254/latest/meta-data/public-ipv4', pretend: true }, function (err, stdout, meta) {
+    console.log('%s %s', meta.cmd, meta.args.join(' '));
+    console.log(stdout)
 });
 
-req.on('error', function(e) {
-  console.log('problem with request: ' + e.message);
-});
 
-// write data to request body
-req.write('data\n');
-req.write('data\n');
-req.end();
-   
 // // stop monitor 
 // monitor.stop();
 

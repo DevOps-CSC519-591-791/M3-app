@@ -19,6 +19,6 @@
     "mocha": "latest",
     "istanbul": "latest",
     "os-monitor": "latest",
-    "node-libcurl": "latest"
+    "curlrequest": "latest"
   }
 }
