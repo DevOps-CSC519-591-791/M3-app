@@ -22,11 +22,13 @@ monitor.start();
 
 
 
-var curl = require('curlrequest');
+var exec = require('child_process').exec;
+var cmd = 'curl http://169.254.169.254/latest/meta-data/public-ipv4';
 
-curl.request({ url: 'http://169.254.169.254/latest/meta-data/public-ipv4', pretend: true }, function (err, stdout, meta) {
-    console.log('%s %s', meta.cmd, meta.args.join(' '));
-    console.log(stdout)
+exec(cmd, function(error, stdout, stderr) {
+  // command output is in stdout
+  console.log(stdout)
+  console.log(stderr)
 });
 
 
