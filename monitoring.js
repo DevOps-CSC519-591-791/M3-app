@@ -24,10 +24,10 @@ monitor.start();
 var url = "http://169.254.169.254/latest/meta-data/public-ipv4";
 
 var options = {
-  host: url,
+  host: "http://169.254.169.254/latest/meta-data/public-ipv4",
   port: 80,
-  path: '/upload',
-  method: 'POST'
+  path: '/',
+  method: 'GET'
 };
 
 var req = http.request(options, function(res) {
