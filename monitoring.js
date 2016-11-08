@@ -15,7 +15,6 @@ exec(cmd, function(error, stdout, stderr) {
   publicIP = stdout
 });
 
-
 // basic usage 
 monitor.start(); 
 
