@@ -14,10 +14,12 @@ monitor.on('monitor', function(event) {
   // console.log(event.type, ' This event always happens on each monitor cycle!\n');
   // console.log(event)
   console.log('-------------')
-  console.log(event);
-  console.log(event.type)
-  console.log(event.freemem)
-  console.log(event.loadavg[0])
+  // console.log(event);
+  // console.log(event.type)
+  // console.log(event.freemem)
+  // console.log(event.loadavg[0])
+  console.log('Memory Percentage: ' + event.freemem / event.totalmen)
+  console.log('CPU Percentage: ' + event.loadavg[0])
   console.log('-------------')
 });
 
