@@ -1,7 +1,7 @@
 {
   "name": "queue",
   "version": "0.0.0",
-  "description": "redis playground",
+  "description": "redis playground and monitoring",
   "main": "stable_inst.js",
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha ./test/test.js",
@@ -17,6 +17,8 @@
     "node-cmd": "latest",
     "request": "latest",
     "mocha": "latest",
-    "istanbul": "latest"
+    "istanbul": "latest",
+    "os-monitor": "latest",
+    "public-ip": "latest"
   }
 }
