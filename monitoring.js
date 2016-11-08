@@ -18,7 +18,8 @@ exec(cmd, function(error, stdout, stderr) {
 
 // basic usage 
 monitor.start(); 
- 
+
+i = 1
 // define handler that will always fire every cycle 
 monitor.on('monitor', function(event) {
   // console.log('\n')
@@ -32,12 +33,12 @@ monitor.on('monitor', function(event) {
   // console.log(event.loadavg[0])
   console.log('Memory Percentage: ' + parseFloat(event.freemem) / parseFloat(event.totalmem))
   console.log('CPU Percentage: ' + event.loadavg[0])
-  str = ''
+  str = i++ + ' - '
   str += event.timestamp + ';'
   str += parseFloat(event.freemem) / parseFloat(event.totalmem) + ';'
   str += event.loadavg[0]
   client.lpush(publicIP, str)
-  client.ltrim(publicIP, 0, 20)
+  client.ltrim(publicIP, 0, 19)
 
   console.log('-------------')
 });
