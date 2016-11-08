@@ -5,6 +5,17 @@ var http = require("http")
 var client = redis.createClient(6379, '54.234.163.154', {})
 
 
+var exec = require('child_process').exec;
+var cmd = 'curl http://169.254.169.254/latest/meta-data/public-ipv4';
+
+var publicIP = ''
+exec(cmd, function(error, stdout, stderr) {
+  // command output is in stdout
+  console.log(stdout)
+  publicIP = stdout
+});
+
+
 // basic usage 
 monitor.start(); 
  
@@ -21,22 +32,17 @@ monitor.on('monitor', function(event) {
   // console.log(event.loadavg[0])
   console.log('Memory Percentage: ' + parseFloat(event.freemem) / parseFloat(event.totalmem))
   console.log('CPU Percentage: ' + event.loadavg[0])
+  str = ''
+  str += event.timestamp + ','
+  str += parseFloat(event.freemem) / parseFloat(event.totalmem) + ','
+  str += event.loadavg[0]
+  client.lpush(publicIP, str)
+  client.ltrim(publicIP, 0, 20)
+
   console.log('-------------')
 });
 
 
-
-
-
-// var exec = require('child_process').exec;
-// var cmd = 'curl http://169.254.169.254/latest/meta-data/public-ipv4';
-
-// var publicIP = ''
-// exec(cmd, function(error, stdout, stderr) {
-//   // command output is in stdout
-//   console.log(stdout)
-//   publicIP = stdout
-// });
 
 
 
