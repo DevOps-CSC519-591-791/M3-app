@@ -13,6 +13,7 @@ function print_hello(req, res){
     client.get("flag", function(err,flag){
         res.write('<html>');
         res.write('<body>');
+        res.write('CANARY:');
         res.write('Hello! This is the web page for milestone 3 demo.</br></br>');
         res.write('<b>This instance shows the canary version.</b></br>');
         if (flag.charAt(0) == '1'){
