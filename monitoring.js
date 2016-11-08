@@ -33,8 +33,8 @@ monitor.on('monitor', function(event) {
   console.log('Memory Percentage: ' + parseFloat(event.freemem) / parseFloat(event.totalmem))
   console.log('CPU Percentage: ' + event.loadavg[0])
   str = ''
-  str += event.timestamp + ','
-  str += parseFloat(event.freemem) / parseFloat(event.totalmem) + ','
+  str += event.timestamp + ';'
+  str += parseFloat(event.freemem) / parseFloat(event.totalmem) + ';'
   str += event.loadavg[0]
   client.lpush(publicIP, str)
   client.ltrim(publicIP, 0, 20)
