@@ -1,6 +1,5 @@
 var monitor = require("os-monitor");
 var redis = require("redis")
-var publicIp = require('public-ip');
 
 var client = redis.createClient(6379, '54.234.163.154', {})
 
@@ -21,12 +20,18 @@ monitor.on('monitor', function(event) {
   console.log('-------------')
 });
 
-var ip = publicIp.v4().then(ip => {
-    console.log(ip);
-    return ip
-    //=> '46.5.21.123' 
+
+var request = require('request');
+
+var url = "http://169.254.169.254/latest/meta-data/public-ipv4";
+
+console.log(url);
+request(url, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log('request url: '+url);
+  }
 });
- 
+   
 // // stop monitor 
 // monitor.stop();
 
