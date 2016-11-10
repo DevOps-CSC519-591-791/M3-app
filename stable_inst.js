@@ -15,7 +15,7 @@ function print_hello(req, res){
 		res.write('<html>');
 	    res.write('<body>');
 	    res.write('STABLE:\n');
-	    res.write('Hello world, our servers are ready! This is the web page for milestone 3 demo.</br></br>');
+	    res.write('Hello world, our servers are ready! This is the web page for milestone 3 demo. Congrats Donald Trump!</br></br>');
 	    res.write('<b>This instance shows the stable version.</b></br>');
 	    if (flag.charAt(0) == '1'){
 	    	res.write('Feature 1 Enabled.</br>');
