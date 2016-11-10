@@ -18,7 +18,6 @@
     "request": "latest",
     "mocha": "latest",
     "istanbul": "latest",
-    "os-monitor": "latest",
-    "curlrequest": "latest"
+    "os-monitor": "latest"
   }
 }
