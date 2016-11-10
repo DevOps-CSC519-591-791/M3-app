@@ -1,5 +1,4 @@
 whoami
-ls -a
 which forever
 
 # npm install

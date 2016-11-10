@@ -4,7 +4,7 @@
   "description": "redis playground and monitoring",
   "main": "stable_inst.js",
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha ./test/test.js",
+    "test": "istanbul cover mocha ./test/test.js",
     "start": "node stable_inst"
   },
   "author": "",
