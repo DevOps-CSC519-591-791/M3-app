@@ -7,7 +7,7 @@ var app = express()
 const exec = require('child_process').exec;
 
 // REDIS
-var client = redis.createClient(6379, '54.234.163.154', {})
+var client = redis.createClient(6379, '54.175.133.60', {})
 var myurl;
 
 function print_hello(req, res){
